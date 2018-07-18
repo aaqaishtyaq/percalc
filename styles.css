@@ -1,0 +1,296 @@
+/*
+Basic input element using psuedo classes
+*/
+
+html {
+    font-family: 'OperatorMono';
+    width: 100%;
+    /*background-color: #eaeff2;*/
+}
+
+body {
+    margin: 5% auto 0 auto;
+    width: 90%;
+}
+
+h1 {
+    font-family: 'OperatorMonoItalic';
+    font-size: 4vw;
+    text-decoration: underline wavy #00ff85;
+    margin: auto;
+}
+
+input,
+span,
+label,
+textarea,
+footer {
+    font-family: 'OperatorMono';
+    display: block;
+    margin: 1vw;
+    padding: 0.5vw;
+    border: none;
+    font-size: 2vw;
+}
+
+textarea:focus,
+input:focus {
+    outline: 0;
+}
+
+
+
+/* Question */
+
+input.question,
+textarea.question {
+    font-size: 4.5vw;
+    font-weight: 300;
+    border-radius: 0.2vw;
+    margin: 0;
+    border: none;
+    width: 80%;
+    background: rgba(0, 0, 0, 0);
+    transition: padding-top 0.2s ease, margin-top 0.2s ease;
+    overflow-x: hidden;
+    /* Hack to make "rows" attribute apply in Firefox. */
+}
+
+
+
+/* Underline and Placeholder */
+
+input.question+label,
+textarea.question+label {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 10%;
+    /*border-top: 1px solid red;*/
+    -webkit-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+    height: 0px;
+}
+
+input.question:focus+label,
+textarea.question:focus+label {
+    width: 80%;
+}
+
+input.question:focus,
+input.question:valid {
+    padding-top: 3.5vw;
+}
+
+textarea.question:valid,
+textarea.question:focus {
+    margin-top: 3.5vw;
+}
+
+input.question:focus+label>span,
+input.question:valid+label>span {
+    top: -9.8vw;
+    font-size: 2.2vw;
+    color: #333;
+}
+
+textarea.question:focus+label>span,
+textarea.question:valid+label>span {
+    top: -14.65vw;
+    font-size: 2.14vw;
+    color: #333;
+}
+
+input.question:valid+label,
+textarea.question:valid+label {
+    border-color: green;
+}
+
+input.question:invalid,
+textarea.question:invalid {
+    box-shadow: none;
+}
+
+input.question+label>span,
+textarea.question+label>span {
+    font-weight: 300;
+    margin: 0;
+    position: absolute;
+    color: #8F8F8F;
+    font-size: 2.9vw;
+    top: -6.44vw;
+    left: 0px;
+    z-index: -1;
+    -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+input[type="button"] {
+    -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+    transition: opacity 0.2s ease, background 0.2s ease;
+    display: block;
+    opacity: 0;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    cursor: pointer;
+    border: 0.4vw solid #00ff85
+}
+
+input[type="button"]:hover {
+    background: #00ff85;
+}
+
+input[type="button"]:active {
+    background: #00ff85;
+}
+
+input.question:valid~input[type="button"],
+textarea.question:valid~input[type="button"] {
+    -webkit-animation: appear 1s forwards;
+    animation: appear 1s forwards;
+}
+
+input.question:invalid~input[type="button"],
+textarea.question:invalid~input[type="button"] {
+    display: none;
+}
+
+input[id="reset"] {
+    -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+    transition: opacity 0.2s ease, background 0.2s ease;
+    display: block;
+    opacity: 0;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    cursor: pointer;
+    border: 0.4vw solid #ff3232;
+}
+
+input[id="reset"]:hover {
+    background: #ff3232;
+}
+
+input[id="reset"]:active {
+    background: #ff3232;
+}
+
+input.question:valid~input[type="reset"],
+textarea.question:valid~input[type="reset"] {
+    -webkit-animation: appear 1s forwards;
+    animation: appear 1s forwards;
+}
+
+@-webkit-keyframes appear {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: OperatorMonoItalic;
+    src: url("src/fonts/OperatorMonoLig-BookItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: OperatorMono;
+    src: url("src/fonts/OperatorMonoLig-Book.otf") format("opentype");
+}
+
+input#one+label,
+textarea#one+label {
+    border-top: 0.3vw solid #f54814;
+}
+
+input#two+label,
+textarea#two+label {
+    border-top: 0.3vw solid #ff0086;
+}
+
+input#three+label,
+textarea#three+label {
+    border-top: 0.3vw solid #a32dd8;
+}
+
+input#four+label,
+textarea#four+label {
+    border-top: 0.3vw solid #04f5ff;
+}
+
+#update {
+    font-family: 'OperatorMono';
+    font-size: 3vw;
+    margin-bottom: 3%;
+    color: #040906;
+    text-align: center;
+    padding: 2vw;
+    text-decoration: underline wavy #EBFF00;
+    margin: auto;
+}
+
+#btnres {
+    border-radius: 0.4vw;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.8vw;
+    padding: 2vw;
+    width: 20vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0.5vw;
+    background-color: #00ff85;
+}
+
+#btnres span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#btnres span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -2vw;
+    transition: 0.5s;
+}
+
+#btnres:hover span {
+    padding-right: 2.5vw;
+}
+
+#btnres:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+footer {
+    position: fixed;
+    padding: 10px;
+    color: #000000;
+}
+
+footer>p>a {
+    font-family: 'OperatorMonoItalic';
+    color: #000000;
+    text-decoration-style: wavy;
+    text-decoration-color: #04f5ff;
+}
+
+footer>p>a:hover {
+    text-decoration: none !important;
+    color: #04f5ff;
+}
+
+
+/*text-decoration: underline wavy #04f5ff*/
